@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title></title>
+    <link rel="stylesheet" href="fb.css">
+  </head>
+  <body id="all">
+    <div id="conatiner">
+      <div id="player">
+        <h2>Enter a name</h2>
+        <input id="player-name" type="text" name="" value="" style="line-height: 2em;">
+        <button type="submit" id="name" style="height : 2em">save</button>
+      </div>
+      <div class="style">
+        <h2>Choose a bird</h2>
+        <div id="birds">
+          <div class="bird-container" id="bird0">
+            <img id="defaultBird" src="images\fb.png" alt="" height = 100 width = 127>
+          </div>
+          <div class="bird-container" id="bird1" >
+            <img src="images\fb1.png" alt="" height = 100 width = 127>
+          </div>
+          <div class="bird-container" id="bird2">
+            <img src="images\fb2.png" alt="" height = 100 width = 127>
+          </div>
+          <div class="bird-container" id="bird3">
+            <img src="images\fb3.png" alt="" height = 100 width = 127>
+          </div>
+        </div>
+        <h2>Choose a background</h2>
+        <div id="backgrounds">
+          <div class="bg" id="night">
+            <img id="defaultBg" src="images\bg_night.jpg" alt="">
+          </div>
+          <div class="bg" id="sunny">
+            <img src="images\bg_sunny.jpg" alt="">
+          </div>
+        </div>
+        <h2>Choose a footground</h2>
+        <div id="footgrounds">
+          <div class="fg" id="night">
+            <img id="defaultFg" src="images\ground.png" alt="">
+          </div>
+          <div class="fg" id="sunny">
+            <img src="images\ground2.png" alt="">
+          </div>
+        </div>
+        <button type="button" name="button" id="change">Save</button>
+      </div>
+
+      <div id="game-container" >
+        <div id="play-container">
+
+        </div>
+        <div class="buttons">
+          <button type="button" name="button" id="start">Start</button>
+          <button type="button" name="button" id="stop">Pause</button>
+          <button type="button" name="button" id="restart">Restart</button>
+        </div>
+      </div>
+      <div id="score-board-container">
+        <div id="score-board-text">
+          Score board
+        </div>
+        <ol id="score-board"></ol>
+      </div>
+    </div>
+    <script src="theme.js"></script>
+    <script src="run.js"></script>
+  </body>
+</html>
