@@ -1,0 +1,129 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  font-size: 1vw;
+}
+
+body#all {
+    padding:20px;
+    color: #95C623;
+    font-family: monospace;
+    font-size: 1.5rem;
+    background-color: #071E22;
+}
+.bird-container, .bg, .fg{
+    margin-left: 2rem;
+    margin-left: 2rem;
+    display: flex;
+    transition: 200ms
+}
+.bird-container:hover, .bg:hover, .fg:hover {
+    border-top: red groove;
+}
+
+#birds {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#backgrounds , #footgrounds{
+    display: grid;
+    grid-template-columns: repeat(2,1fr)
+}
+
+div#game-container {
+    margin-top: 2rem;
+    display: grid;
+    text-align: center;
+}
+/* .style {
+    height: 100%;
+}
+
+html {height: 200%;}
+
+body#all {
+    height: 100%;
+}
+
+div#conatiner {
+    height: 80%;
+}
+
+div#birds {
+    height: 10%;
+} */
+
+
+
+img {
+    align-content: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg , .fg{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#backgrounds {
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button{
+  background-color: #E55812;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#name{
+  padding: 0px 10px;
+}
+
+#change{
+  display:flex;
+  margin: auto;
+}
+
+#player{
+  padding-bottom: 20px;
+  border-bottom: 2px solid;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+#play-container{
+  margin-bottom: 20px;
+}
+
+/* canvas{
+  font-size: 2.5rem;
+} */
+
+
+.buttons{
+  border-bottom: 2px solid;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.style{
+  border-bottom: 2px solid;
+  padding-bottom: 50px;
+}
