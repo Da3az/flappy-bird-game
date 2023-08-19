@@ -7,7 +7,6 @@ var nameInput = document.getElementById('player-name')
 
 nameBtn.addEventListener('click',function(){
   player = nameInput.value
-  console.log(player)
 })
 
 
@@ -16,14 +15,12 @@ var winw = window.innerWidth
 
 function levelUp(){
   var condition = score / 5
-  console.log(condition)
   if(condition - Math.floor(condition) == 0){
   level += 1
-  if(gap > 80){
+  if(gap > 100){
     gap -= 10
   }
-  speed += 0.5
-  console.log('levele up')
+  speed += 0.2
 } }
 
 
@@ -66,7 +63,6 @@ function initialize(){
     scoreElement.innerText = `${score[1]} by ${score[0]}`
     scoreBoard.append(scoreElement)
    })
-  console.log(scoreBoard)
 }
 if(scores != null){
   initialize()
@@ -93,9 +89,9 @@ var birdFly = makeImage("images/flappybj.png")
 
 
 var gap = 160
-var speed = 3
-var gravity = 1.2
-var jump = 30
+var speed = 1
+var gravity = 0.5
+var jump = 80
 var jumpon = 0
 var Yb = (cvs.height*0.9 - gap)/2
 var pipes = [{
@@ -141,14 +137,11 @@ function addScore(oldScores,newScore){
     if(newScores.length > 10){
       newScores = newScores.slice(0,10)
     }
-    console.log(JSON.stringify(newScores))
     newScores.forEach( (score) => {
-      console.log(JSON.stringify(score))
       var scoreElement = document.createElement('li')
       scoreElement.innerText = `${score[1]} by ${score[0]}`
       scoreBoard.append(scoreElement)
      })
-     console.log(scoreBoard)
      localStorage.setItem("scores", JSON.stringify(newScores));
          return newScores
 }
@@ -156,9 +149,7 @@ function addScore(oldScores,newScore){
 start.addEventListener('click',()=>{
  change.disabled = true
  nameBtn.disabled = true
- console.log(scores)
  if(lose){
-   console.log(lose)
    pipes = [{
     x: cvs.width,
     y: -(cvs.height*0.3+gap/2)
@@ -204,10 +195,6 @@ var nmotion = -1
     }
   }
   function losed(){
-    console.log('losed--------')
-    console.log(scores)
-    console.log(score)
-    console.log("---------")
    scores = addScore(scores,score)
    ctx.textAlign = "start";
    ctx.fillText("Score : "+score,100,cvs.height-20);
@@ -255,15 +242,12 @@ var nmotion = -1
     }
     if(nmotion >= 0){
         time = new Date()
-        // console.log(Math.abs(time.getMilliseconds() - nmotion))
         if((Math.abs(time.getMilliseconds() - nmotion)) < 100){
-          console.log(time.getMilliseconds() )
            ctx.drawImage(birdFly,20,Yb,cvs.width*0.07,cvs.width*0.07)
         } else {
           nmotion = -1
         }
     } else {
-      // console.log('else')
       ctx.drawImage(birdImg,20,Yb,cvs.width*0.07,cvs.width*0.07)
     }
     ctx.drawImage(fgImg,0,cvs.height*0.9,cvs.width,cvs.height*0.1)
@@ -292,7 +276,7 @@ var nmotion = -1
      if(lose){
        level = 0
        gap = 160
-       speed = 3
+       speed = 1
        ctx.fillStyle = "#FF0000";
        ctx.font = "20px Verdana";
        ctx.textAlign = "center";
@@ -303,7 +287,6 @@ var nmotion = -1
      }
      stop.addEventListener('click',()=>{
       if(!cel){
-      console.log('clicked')
       cel = 1
      }
 
